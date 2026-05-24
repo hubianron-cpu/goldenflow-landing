@@ -258,7 +258,7 @@ function CtaButton({
       href={whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-6 py-3 text-sm font-black text-black shadow-[0_18px_50px_rgba(212,175,55,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#B8942E] hover:shadow-[0_22px_60px_rgba(212,175,55,0.34)] active:scale-[0.98] ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-5 py-2.5 text-sm font-black text-black shadow-[0_18px_50px_rgba(212,175,55,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#B8942E] hover:shadow-[0_22px_60px_rgba(212,175,55,0.34)] active:scale-[0.98] sm:min-h-12 sm:px-6 sm:py-3 ${className}`}
     >
       <MessageCircle className="h-5 w-5" />
       {children}
@@ -276,22 +276,22 @@ function SectionTitle({
   text?: string;
 }) {
   return (
-    <div className="mx-auto mb-10 max-w-3xl text-right">
+    <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10 lg:text-right">
       {eyebrow ? (
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#D4AF37]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-[1.7rem] font-black leading-tight text-white sm:text-4xl">{title}</h2>
-      {text ? <p className="mt-4 text-base leading-8 text-[#B8B8B8] sm:text-lg">{text}</p> : null}
+      <h2 className="text-[1.55rem] font-black leading-tight text-white min-[390px]:text-[1.7rem] sm:text-4xl">{title}</h2>
+      {text ? <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-lg lg:mx-0">{text}</p> : null}
     </div>
   );
 }
 
 function HighlightBlock({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/15 to-white/[0.03] p-5 text-right sm:p-6">
-      <p className="text-lg font-black leading-8 text-white sm:text-2xl sm:leading-9">{children}</p>
+    <div className="rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/15 to-white/[0.03] p-4 text-center sm:p-6 lg:text-right">
+      <p className="text-base font-black leading-7 text-white min-[390px]:text-lg min-[390px]:leading-8 sm:text-2xl sm:leading-9">{children}</p>
     </div>
   );
 }
@@ -307,12 +307,12 @@ function DashboardPreview() {
   return (
     <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[24px] border border-white/[0.12] bg-[#0B0B0B]/95 p-3 shadow-[0_30px_100px_rgba(0,0,0,0.52),0_0_90px_rgba(212,175,55,0.18)] sm:rounded-[28px] sm:p-5">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:34px_34px] opacity-20" />
-      <div className="relative mb-4 flex items-center justify-between gap-4 border-b border-white/[0.08] pb-4">
+      <div className="relative mb-3 flex items-center justify-between gap-3 border-b border-white/[0.08] pb-3 sm:mb-4 sm:gap-4 sm:pb-4">
         <div className="flex items-center gap-3">
           <div className="hidden h-10 w-10 rounded-2xl border border-white/[0.10] bg-white/[0.04] sm:block" />
           <div>
             <p className="text-xs text-[#B8B8B8]">GoldenFlow CRM</p>
-            <h3 className="mt-1 text-lg font-black text-white sm:text-xl">מה מקדמים היום?</h3>
+            <h3 className="mt-1 text-base font-black text-white min-[390px]:text-lg sm:text-xl">מה מקדמים היום?</h3>
           </div>
         </div>
         <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs font-bold text-[#D4AF37]">
@@ -324,11 +324,11 @@ function DashboardPreview() {
         {statCards.map((card) => (
           <div
             key={card.label}
-            className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/25 sm:p-4"
+            className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/25 min-[390px]:p-3 sm:p-4"
           >
             <p className="text-xs leading-5 text-[#B8B8B8]">{card.label}</p>
-            <div className="mt-3 flex items-end justify-between gap-2">
-              <strong className="text-lg font-black text-[#D4AF37] min-[380px]:text-xl sm:text-2xl">{card.value}</strong>
+            <div className="mt-2 flex items-end justify-between gap-2 min-[390px]:mt-3">
+              <strong className="text-lg font-black text-[#D4AF37] sm:text-2xl">{card.value}</strong>
               <span className="rounded-full bg-white/[0.07] px-2 py-1 text-[11px] text-white">
                 {card.badge}
               </span>
@@ -401,7 +401,7 @@ function DashboardPreview() {
 
 function RealityPreviewSection() {
   return (
-      <section className="bg-[#0B0B0B] px-4 py-16 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           title="איך זה נראה בפועל?"
@@ -413,10 +413,10 @@ function RealityPreviewSection() {
             return (
               <div
                 key={card.title}
-                className="rounded-2xl border border-white/[0.12] bg-[#050505] p-4 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] transition duration-200 hover:-translate-y-1 hover:border-[#D4AF37]/30 sm:p-5 lg:col-span-2 first:lg:col-span-3 last:lg:col-span-3"
+                className="rounded-2xl border border-white/[0.12] bg-[#050505] p-3.5 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] transition duration-200 hover:-translate-y-1 hover:border-[#D4AF37]/30 sm:p-5 lg:col-span-2 first:lg:col-span-3 last:lg:col-span-3"
               >
-                <div className="mb-5 flex items-center justify-between gap-3">
-                  <h3 className="text-lg font-black text-white">{card.title}</h3>
+                <div className="mb-4 flex items-center justify-between gap-3 sm:mb-5">
+                  <h3 className="text-base font-black text-white min-[390px]:text-lg">{card.title}</h3>
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 text-[#D4AF37]">
                     <Icon className="h-5 w-5" />
                   </div>
@@ -435,9 +435,9 @@ function RealityPreviewSection() {
               </div>
             );
           })}
-          <div className="rounded-2xl border border-[#D4AF37]/25 bg-[#D4AF37]/[0.06] p-4 text-right shadow-[0_18px_70px_rgba(212,175,55,0.08)] sm:p-5 lg:col-span-3">
-            <div className="mb-5 flex items-center justify-between gap-3">
-              <h3 className="text-lg font-black text-white">יעד יומי</h3>
+          <div className="rounded-2xl border border-[#D4AF37]/25 bg-[#D4AF37]/[0.06] p-3.5 text-right shadow-[0_18px_70px_rgba(212,175,55,0.08)] sm:p-5 lg:col-span-3">
+            <div className="mb-4 flex items-center justify-between gap-3 sm:mb-5">
+              <h3 className="text-base font-black text-white min-[390px]:text-lg">יעד יומי</h3>
               <span className="rounded-full bg-[#D4AF37] px-3 py-1 text-xs font-black text-black">
                 68%
               </span>
@@ -445,13 +445,13 @@ function RealityPreviewSection() {
             <p className="text-sm leading-7 text-[#B8B8B8]">
               3 שיחות מכירה, 2 פולואפים דחופים והצעת מחיר אחת שמחכה לסגירה.
             </p>
-            <div className="mt-5 h-3 rounded-full bg-white/[0.10]">
+            <div className="mt-4 h-3 rounded-full bg-white/[0.10] sm:mt-5">
               <div className="h-3 w-[68%] rounded-full bg-[#D4AF37] shadow-[0_0_22px_rgba(212,175,55,0.35)]" />
             </div>
           </div>
-          <div className="rounded-2xl border border-white/[0.12] bg-[#050505] p-4 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-5 lg:col-span-3">
-            <div className="mb-5 flex items-center justify-between gap-3">
-              <h3 className="text-lg font-black text-white">לידים שדורשים טיפול</h3>
+          <div className="rounded-2xl border border-white/[0.12] bg-[#050505] p-3.5 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-5 lg:col-span-3">
+            <div className="mb-4 flex items-center justify-between gap-3 sm:mb-5">
+              <h3 className="text-base font-black text-white min-[390px]:text-lg">לידים שדורשים טיפול</h3>
               <span className="rounded-full border border-[#D4AF37]/25 bg-[#D4AF37]/10 px-3 py-1 text-xs font-bold text-[#D4AF37]">
                 5 היום
               </span>
@@ -478,7 +478,7 @@ function RealityPreviewSection() {
 
 function WorkflowVisual() {
   return (
-    <div className="mx-auto mt-8 max-w-7xl rounded-3xl border border-white/[0.10] bg-[#050505] p-4 shadow-[0_22px_80px_rgba(0,0,0,0.28)] sm:mt-10 sm:p-5">
+    <div className="mx-auto mt-7 max-w-7xl rounded-3xl border border-white/[0.10] bg-[#050505] p-3.5 shadow-[0_22px_80px_rgba(0,0,0,0.28)] sm:mt-10 sm:p-5">
       <div className="mb-4 flex flex-col items-start gap-3 min-[430px]:flex-row min-[430px]:items-center min-[430px]:justify-between">
         <p className="text-sm font-black text-white">זרימת מכירה מסודרת</p>
         <span className="rounded-full border border-[#D4AF37]/25 bg-[#D4AF37]/10 px-3 py-1 text-xs font-bold text-[#D4AF37]">
@@ -513,14 +513,14 @@ function WorkflowVisual() {
 
 export default function GoldenFlowPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] pb-28 text-white md:pb-0" dir="rtl">
-      <section className="relative px-4 pb-12 pt-7 min-[390px]:px-5 sm:px-6 lg:px-8 lg:pb-24 lg:pt-10">
+    <main className="min-h-screen overflow-hidden bg-[#050505] pb-32 text-white md:pb-0" dir="rtl">
+      <section className="relative px-4 pb-10 pt-6 min-[390px]:px-5 sm:px-6 lg:px-8 lg:pb-24 lg:pt-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_5%,rgba(212,175,55,0.19),transparent_32rem),radial-gradient(circle_at_10%_18%,rgba(255,255,255,0.08),transparent_22rem)]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:44px_44px] opacity-20 [mask-image:linear-gradient(to_bottom,black,transparent_80%)]" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#D4AF37]/35 to-transparent" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
-          <div className="max-w-3xl text-right">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-2 text-xs font-bold text-[#D4AF37] sm:text-sm">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
+          <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-right">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:mb-5 sm:px-4 sm:text-sm">
               <Sparkles className="h-4 w-4" />
               מחיר השקה למשתמשים הראשונים
             </div>
@@ -529,15 +529,15 @@ export default function GoldenFlowPage() {
               {" "}
               <span className="mt-2 block text-[#D4AF37]">הם פשוט צריכים ניהול נכון.</span>
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-xl sm:leading-9">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-xl sm:leading-9 lg:mx-0">
               GoldenFlow מרכזת לך לידים, משימות ופולואפים במקום אחד - ומראה לך בכל
               יום למי לפנות כדי להתקרב ליעד המכירות שלך.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center lg:justify-start">
               <CtaButton className="w-full sm:w-auto">פתיחת מנוי בוואטסאפ</CtaButton>
               <a
                 href="#fit"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-white/[0.04] px-6 py-3 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:bg-white/[0.08]"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:bg-white/[0.08] sm:min-h-12 sm:px-6 sm:py-3"
               >
                 למי זה מתאים?
                 <ArrowLeft className="h-4 w-4" />
@@ -569,7 +569,7 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section id="fit" className="px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section id="fit" className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             title="למי GoldenFlow CRM מתאים?"
@@ -587,13 +587,13 @@ export default function GoldenFlowPage() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-8 max-w-3xl rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-5 text-right text-lg font-bold leading-8 text-white">
+          <p className="mx-auto mt-7 max-w-3xl rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-4 text-center text-base font-bold leading-7 text-white min-[390px]:text-lg min-[390px]:leading-8 sm:mt-8 sm:p-5 sm:text-right">
             מתאים במיוחד לעסק קטן שרוצה לעבוד מסודר כמו עסק גדול - בלי להסתבך.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#0B0B0B] px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             title="הבעיה היא לא שאין לידים. הבעיה היא שהם נופלים בין הכיסאות."
@@ -613,7 +613,7 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle title="לפני GoldenFlow מול אחרי GoldenFlow" />
           <div className="grid overflow-hidden rounded-3xl border border-white/[0.12] bg-[#0B0B0B] md:grid-cols-2">
@@ -623,14 +623,14 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="bg-[#0B0B0B] px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-7 sm:gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <SectionTitle
               title="מרכז שליטה אחד ללידים, משימות והפעולה הבאה"
               text="GoldenFlow CRM עוזרת להבין מאיפה להתחיל היום ומה הפעולה הבאה שכדאי לקדם."
             />
-            <p className="text-right text-base leading-8 text-[#B8B8B8] sm:text-lg sm:leading-9">
+            <p className="text-center text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-lg sm:leading-9 lg:text-right">
               במקום לפתוח וואטסאפ, אקסלים ופתקים - נכנסים ל-GoldenFlow ורואים:
             </p>
           </div>
@@ -654,7 +654,7 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle title="מה יש בתוך GoldenFlow CRM?" />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -679,9 +679,9 @@ export default function GoldenFlowPage() {
 
       <RealityPreviewSection />
 
-      <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[28px] border border-[#D4AF37]/25 bg-gradient-to-br from-[#D4AF37]/14 to-[#0B0B0B] p-6 text-center sm:p-10">
-          <p className="text-2xl font-black leading-9 text-white sm:text-4xl sm:leading-tight">
+      <section className="px-4 py-10 min-[390px]:px-5 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-[28px] border border-[#D4AF37]/25 bg-gradient-to-br from-[#D4AF37]/14 to-[#0B0B0B] p-5 text-center sm:p-10">
+          <p className="text-xl font-black leading-8 text-white min-[390px]:text-2xl min-[390px]:leading-9 sm:text-4xl sm:leading-tight">
             לפעמים לא צריך עוד לידים.
             {" "}
             <span className="block text-[#D4AF37]">צריך להפסיק לפספס את אלה שכבר הגיעו.</span>
@@ -689,7 +689,7 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="bg-[#0B0B0B] px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             title="מה GoldenFlow CRM עושה - ומה היא לא עושה?"
@@ -699,7 +699,7 @@ export default function GoldenFlowPage() {
             {clarityItems.map((item) => (
               <div
                 key={item.text}
-                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-5 text-right"
+                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
               >
                 {item.type === "yes" ? (
                   <Check className="mt-1 h-5 w-5 shrink-0 text-[#D4AF37]" />
@@ -710,30 +710,30 @@ export default function GoldenFlowPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 rounded-3xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-6 text-right text-xl font-black leading-9 text-white">
+          <p className="mt-7 rounded-3xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-4 text-center text-lg font-black leading-8 text-white sm:mt-8 sm:p-6 sm:text-right sm:text-xl sm:leading-9">
             המטרה פשוטה: פחות בלגן, יותר שליטה, ויותר מיקוד בלידים שכבר הגיעו.
           </p>
         </div>
       </section>
 
-      <section className="px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionTitle eyebrow="מחיר השקה" title="מחיר השקה למשתמשים הראשונים" />
-          <div className="rounded-[24px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-5 text-right shadow-[0_34px_100px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.13)] sm:rounded-[28px] sm:p-8">
-            <div className="flex flex-col gap-4 border-b border-white/[0.10] pb-7 sm:flex-row sm:items-start sm:justify-between">
+          <div className="rounded-[24px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-4 text-right shadow-[0_34px_100px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.13)] min-[390px]:p-5 sm:rounded-[28px] sm:p-8">
+            <div className="flex flex-col gap-4 border-b border-white/[0.10] pb-6 text-center sm:flex-row sm:items-start sm:justify-between sm:pb-7 sm:text-right">
               <div>
                 <p className="text-sm font-bold text-[#D4AF37]">GoldenFlow CRM</p>
                 <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">חבילת השקה</h2>
               </div>
-              <div className="text-right sm:text-left">
-                <p className="text-5xl font-black leading-none text-[#D4AF37] sm:text-6xl">97 ש&quot;ח</p>
+              <div className="text-center sm:text-left">
+                <p className="text-4xl font-black leading-none text-[#D4AF37] min-[390px]:text-5xl sm:text-6xl">97 ש&quot;ח</p>
                 <p className="mt-1 text-sm font-bold text-[#B8B8B8]">לחודש</p>
               </div>
             </div>
-            <p className="mt-6 rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-4 text-sm font-bold leading-7 text-white min-[390px]:text-base min-[390px]:leading-8">
+            <p className="mt-5 rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3.5 text-center text-sm font-bold leading-7 text-white min-[390px]:p-4 min-[390px]:text-base min-[390px]:leading-8 sm:mt-6 sm:text-right">
               המחיר נשאר קבוע למצטרפים בתקופת ההשקה כל עוד המנוי פעיל.
             </p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 sm:mt-7 sm:grid-cols-2">
               {includedItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm font-bold text-white">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-[#D4AF37]" />
@@ -749,14 +749,14 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="bg-[#0B0B0B] px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle title="מה קורה אחרי שמצטרפים?" />
           <div className="grid gap-4 md:grid-cols-4">
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-white/[0.10] bg-[#050505] p-5 text-right"
+                className="rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
               >
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#D4AF37] text-lg font-black text-black">
                   {index + 1}
@@ -769,24 +769,24 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <section className="px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[24px] border border-[#D4AF37]/25 bg-gradient-to-br from-[#D4AF37]/12 to-[#0B0B0B] p-5 text-right sm:rounded-[28px] sm:p-10">
-          <TrendingUp className="mb-5 h-9 w-9 text-[#D4AF37]" />
-          <h2 className="text-[1.7rem] font-black leading-tight text-white sm:text-4xl">
+      <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-[24px] border border-[#D4AF37]/25 bg-gradient-to-br from-[#D4AF37]/12 to-[#0B0B0B] p-5 text-center sm:rounded-[28px] sm:p-10 lg:text-right">
+          <TrendingUp className="mx-auto mb-5 h-8 w-8 text-[#D4AF37] sm:h-9 sm:w-9 lg:mx-0" />
+          <h2 className="text-[1.55rem] font-black leading-tight text-white min-[390px]:text-[1.7rem] sm:text-4xl">
             אם כבר יש לידים - אין סיבה שהם יתפספסו
           </h2>
-          <p className="mt-5 text-lg leading-9 text-[#B8B8B8]">
+          <p className="mt-4 text-base leading-8 text-[#B8B8B8] sm:mt-5 sm:text-lg sm:leading-9">
             GoldenFlow CRM לא מביאה לידים חדשים. היא עוזרת לתעדף את הלידים שכבר
             הגיעו ולזכור מה צריך לקדם היום.
           </p>
-          <p className="mt-5 text-lg font-black leading-8 text-white sm:text-xl sm:leading-9">
+          <p className="mt-5 text-base font-black leading-7 text-white min-[390px]:text-lg min-[390px]:leading-8 sm:text-xl sm:leading-9">
             לפעמים ההבדל בין יום מכירות מבולגן ליום מכירות ממוקד הוא פשוט לדעת למי
             לפנות קודם.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#0B0B0B] px-4 py-14 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <SectionTitle title="שאלות נפוצות" />
           <div className="space-y-4">
@@ -796,35 +796,35 @@ export default function GoldenFlowPage() {
                 open={index === 0}
                 className="group rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-black leading-7 text-white sm:text-lg [&::-webkit-details-marker]:hidden">
-                  <span className="min-w-0 pe-2">{faq.question}</span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.12] text-[#D4AF37] transition group-open:rotate-45">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[0.95rem] font-black leading-7 text-white min-[390px]:text-base sm:gap-4 sm:text-lg [&::-webkit-details-marker]:hidden">
+                  <span className="min-w-0 pe-3">{faq.question}</span>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/[0.12] text-[#D4AF37] transition group-open:rotate-45 sm:h-8 sm:w-8">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-base leading-8 text-[#B8B8B8]">{faq.answer}</p>
+                <p className="mt-4 text-sm leading-7 text-[#B8B8B8] min-[390px]:text-base min-[390px]:leading-8">{faq.answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 pb-44 pt-14 min-[390px]:px-5 sm:px-6 sm:pt-20 lg:px-8 lg:pb-24">
-        <div className="mx-auto max-w-5xl rounded-[32px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-7 text-center shadow-[0_34px_100px_rgba(0,0,0,0.46),0_0_80px_rgba(212,175,55,0.14)] sm:p-12">
-          <ShieldCheck className="mx-auto mb-6 h-11 w-11 text-[#D4AF37]" />
-          <h2 className="text-2xl font-black leading-tight text-white sm:text-5xl">
+      <section className="px-4 pb-40 pt-12 min-[390px]:px-5 sm:px-6 sm:pt-20 lg:px-8 lg:pb-24">
+        <div className="mx-auto max-w-5xl rounded-[32px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-5 text-center shadow-[0_34px_100px_rgba(0,0,0,0.46),0_0_80px_rgba(212,175,55,0.14)] min-[390px]:p-7 sm:p-12">
+          <ShieldCheck className="mx-auto mb-5 h-10 w-10 text-[#D4AF37] sm:mb-6 sm:h-11 sm:w-11" />
+          <h2 className="text-xl font-black leading-tight text-white min-[390px]:text-2xl sm:text-5xl">
             הליד הבא שלך לא אמור להיעלם בוואטסאפ
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#B8B8B8] sm:text-lg sm:leading-9">
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:mt-5 sm:text-lg sm:leading-9">
             GoldenFlow CRM עוזרת לפתוח כל יום עם סדר ברור: מי דורש טיפול, למי צריך
             לחזור, ומה הפעולה הבאה שיכולה לקרב אותך ליעד המכירות שלך.
           </p>
-          <CtaButton className="mt-8 w-full sm:w-auto sm:px-10">פתיחת מנוי בוואטסאפ</CtaButton>
+          <CtaButton className="mt-7 w-full sm:mt-8 sm:w-auto sm:px-10">פתיחת מנוי בוואטסאפ</CtaButton>
           <p className="mt-4 text-sm text-[#B8B8B8]">שלח הודעה עכשיו ונפתח לך גישה למערכת.</p>
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.10] bg-[#050505]/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.10] bg-[#050505]/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] pt-2 backdrop-blur md:hidden">
         <CtaButton className="w-full">פתיחת מנוי בוואטסאפ</CtaButton>
       </div>
     </main>
@@ -848,7 +848,7 @@ function ComparisonColumn({
           : "bg-[#050505]"
       }`}
     >
-      <h3 className={`mb-6 text-2xl font-black ${tone === "after" ? "text-[#D4AF37]" : "text-white"}`}>
+      <h3 className={`mb-5 text-xl font-black sm:mb-6 sm:text-2xl ${tone === "after" ? "text-[#D4AF37]" : "text-white"}`}>
         {title}
       </h3>
       <div className="space-y-4">
