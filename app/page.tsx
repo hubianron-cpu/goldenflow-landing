@@ -113,7 +113,7 @@ const features = [
   },
   {
     icon: HandCoins,
-    title: "תצוגת כסף בתהליך המכירה",
+    title: "תצוגת שווי עסקאות פתוחות",
     text: "מבט מהיר על שווי הלידים והעסקאות לפי שלבי המכירה.",
   },
   {
@@ -178,7 +178,7 @@ const includedItems = [
   "ניהול לידים",
   "ניהול משימות",
   "שלבי מכירה",
-  "תצוגת כסף בתהליך המכירה",
+  "תצוגת שווי עסקאות פתוחות",
   "Daily Closing Mode",
   "מיקוד יומי לפעולה",
   "תמיכה בסיסית בוואטסאפ",
@@ -301,7 +301,7 @@ function DashboardPreview() {
     { label: "למי להתקשר היום", value: "4", badge: "עדיפות" },
     { label: "לידים חמים", value: "7", badge: "לטיפול" },
     { label: "פולואפים דחופים", value: "5", badge: "היום" },
-    { label: "כסף בתהליך", value: "₪42K", badge: "פתוח" },
+    { label: "שווי עסקאות פתוחות", value: "₪42K", badge: "פתוח" },
   ];
 
   return (
@@ -526,6 +526,7 @@ export default function GoldenFlowPage() {
             </div>
             <h1 className="text-[2.12rem] font-black leading-[1.1] text-white min-[390px]:text-[2.35rem] sm:text-5xl lg:text-6xl">
               הלידים שלך לא נעלמים.
+              {" "}
               <span className="mt-2 block text-[#D4AF37]">הם פשוט צריכים ניהול נכון.</span>
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-xl sm:leading-9">
@@ -550,8 +551,7 @@ export default function GoldenFlowPage() {
       <section className="border-y border-white/[0.10] bg-[#0B0B0B] px-4 py-8 min-[390px]:px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 text-center text-sm font-bold text-[#D4AF37]">
-            נבנה במיוחד לבעלי עסקים שרוצים לנהל את העסק שלהם בצורה נוחה וקלה לתפעול
-            בעזרת מערכת חכמה שעוזרת לך להבין למי צריך לפנות קודם
+            נבנה לבעלי עסקים שרוצים לדעת בכל יום למי לפנות, מה לקדם ואיך לנהל לידים בלי בלגן.
           </p>
           <div className="grid gap-3 md:grid-cols-3">
             {["בלי אקסלים מבולגנים", "בלי לשכוח פולואפים", "בלי לאבד כסף בין הודעות וואטסאפ"].map(
@@ -683,6 +683,7 @@ export default function GoldenFlowPage() {
         <div className="mx-auto max-w-5xl rounded-[28px] border border-[#D4AF37]/25 bg-gradient-to-br from-[#D4AF37]/14 to-[#0B0B0B] p-6 text-center sm:p-10">
           <p className="text-2xl font-black leading-9 text-white sm:text-4xl sm:leading-tight">
             לפעמים לא צריך עוד לידים.
+            {" "}
             <span className="block text-[#D4AF37]">צריך להפסיק לפספס את אלה שכבר הגיעו.</span>
           </p>
         </div>
@@ -796,7 +797,7 @@ export default function GoldenFlowPage() {
                 className="group rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-black leading-7 text-white sm:text-lg [&::-webkit-details-marker]:hidden">
-                  <span className="min-w-0">{faq.question}</span>
+                  <span className="min-w-0 pe-2">{faq.question}</span>
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/[0.12] text-[#D4AF37] transition group-open:rotate-45">
                     +
                   </span>
@@ -819,7 +820,7 @@ export default function GoldenFlowPage() {
             לחזור, ומה הפעולה הבאה שיכולה לקרב אותך ליעד המכירות שלך.
           </p>
           <CtaButton className="mt-8 w-full sm:w-auto sm:px-10">פתיחת מנוי בוואטסאפ</CtaButton>
-          <p className="mt-4 text-sm text-[#B8B8B8]">שלחו הודעה עכשיו ונפתח גישה למערכת.</p>
+          <p className="mt-4 text-sm text-[#B8B8B8]">שלח הודעה עכשיו ונפתח לך גישה למערכת.</p>
         </div>
       </section>
 
