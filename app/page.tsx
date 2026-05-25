@@ -538,12 +538,16 @@ export default function GoldenFlowPage() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#D4AF37]/35 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
           <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-right">
-            <div className="relative mx-auto mb-4 h-20 w-40 overflow-hidden sm:mb-5 sm:h-24 sm:w-52 lg:mx-0">
+            <div className="mx-auto mb-4 inline-flex items-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)] sm:mb-5 lg:mx-0">
               <img
-                src="/brand/goldenflow-logo-white.png"
-                alt="GoldenFlow CRM"
-                className="absolute inset-x-0 top-[-42%] h-auto w-full"
+                src="/brand/goldenflow-icon-gold.png"
+                alt=""
+                aria-hidden="true"
+                className="h-6 w-6 sm:h-8 sm:w-8"
               />
+              <span className="text-sm font-black tracking-wide text-white sm:text-base">
+                GoldenFlow CRM
+              </span>
             </div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:mb-5 sm:px-4 sm:text-sm">
               <Sparkles className="h-4 w-4" />
