@@ -539,14 +539,14 @@ export default function GoldenFlowPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
           <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-right">
             <div className="mb-5 flex flex-col items-center gap-3 lg:items-start">
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)]">
+              <div className="inline-flex w-fit items-center justify-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3.5 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)]">
                 <img
                   src="/brand/goldenflow-icon-gold.png"
                   alt=""
                   aria-hidden="true"
-                  className="h-6 w-6 object-contain sm:h-8 sm:w-8"
+                  className="h-5 w-5 shrink-0 object-contain sm:h-7 sm:w-7"
                 />
-                <span className="text-sm font-black tracking-wide text-white sm:text-base">
+                <span className="leading-none text-sm font-black tracking-wide text-white sm:text-base">
                   GoldenFlow CRM
                 </span>
               </div>
@@ -687,7 +687,19 @@ export default function GoldenFlowPage() {
 
       <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle title="מה יש בתוך GoldenFlow CRM?" />
+          <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10 lg:text-right">
+            <div className="inline-flex items-center justify-center gap-2.5 lg:justify-start">
+              <img
+                src="/brand/goldenflow-icon-gold.png"
+                alt=""
+                aria-hidden="true"
+                className="h-6 w-6 shrink-0 object-contain sm:h-8 sm:w-8"
+              />
+              <h2 className="text-[1.55rem] font-black leading-tight text-white min-[390px]:text-[1.7rem] sm:text-4xl">
+                מה יש בתוך GoldenFlow CRM?
+              </h2>
+            </div>
+          </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => {
               const Icon = feature.icon;
