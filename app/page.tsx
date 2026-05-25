@@ -322,12 +322,14 @@ function DashboardPreview() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:34px_34px] opacity-20" />
       <div className="relative mb-3 flex items-center justify-between gap-3 border-b border-white/[0.08] pb-3 sm:mb-4 sm:gap-4 sm:pb-4">
         <div className="flex items-center gap-3">
-          <img
-            src="/brand/goldenflow-icon-gold.png"
-            alt=""
-            aria-hidden="true"
-            className="h-8 w-8 rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 p-1.5 object-contain sm:h-10 sm:w-10"
-          />
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 sm:h-10 sm:w-10">
+            <img
+              src="/brand/goldenflow-icon-gold.png"
+              alt=""
+              aria-hidden="true"
+              className="block h-5 w-5 object-contain sm:h-7 sm:w-7"
+            />
+          </span>
           <div>
             <p className="text-xs text-[#B8B8B8]">GoldenFlow CRM</p>
             <h3 className="mt-1 text-base font-black text-white min-[390px]:text-lg sm:text-xl">מה מקדמים היום?</h3>
@@ -539,12 +541,12 @@ export default function GoldenFlowPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
           <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-right">
             <div className="mb-5 flex flex-col items-center gap-3 lg:items-start">
-              <div className="inline-flex w-fit items-center justify-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3.5 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)]">
+              <div className="inline-flex w-fit items-center justify-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3.5 py-2 leading-none shadow-[0_14px_44px_rgba(0,0,0,0.22)]">
                 <img
                   src="/brand/goldenflow-icon-gold.png"
                   alt=""
                   aria-hidden="true"
-                  className="h-5 w-5 shrink-0 object-contain sm:h-7 sm:w-7"
+                  className="block h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6"
                 />
                 <span className="leading-none text-sm font-black tracking-wide text-white sm:text-base">
                   GoldenFlow CRM
