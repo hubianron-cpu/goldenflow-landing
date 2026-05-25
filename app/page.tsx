@@ -418,6 +418,145 @@ function DashboardPreview() {
   );
 }
 
+function RoiBonusSection() {
+  const roiStats = [
+    { label: "ROI כללי", value: "x20.0", tone: "gold" },
+    { label: "רווח נקי משוער", value: "₪17,100", tone: "green" },
+    { label: "סך הכנסות משוערות", value: "₪18,000", tone: "white" },
+    { label: "סך השקעה חודשית", value: "₪900", tone: "white" },
+    { label: "הכלי הכי רווחי", value: "מודעה ממומן", tone: "gold" },
+    { label: "אין כרגע כלי מפסיד", value: "כל הכלים רווחיים", tone: "green" },
+  ];
+
+  const roiPoints = [
+    "מזינים עלות חודשית, כמות לידים, מכירות ושווי מכירה ממוצע",
+    "מקבלים חישוב ROI ברור",
+    "רואים רווח נקי והכנסה משוערת",
+    "מבינים איזה כלי הכי רווחי",
+    "מזהים כלים שלא באמת מחזירים השקעה",
+    "מקבלים תובנות AI פשוטות לפעולה",
+  ];
+
+  return (
+    <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+        <div className="text-center lg:text-right">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:text-sm">
+            <Sparkles className="h-4 w-4" />
+            בונוס בתוך המערכת
+          </div>
+          <h2 className="text-[1.55rem] font-black leading-tight text-white min-[390px]:text-[1.7rem] sm:text-4xl">
+            מרכז ROI שמראה לך מה באמת משתלם בעסק
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-lg lg:mx-0">
+            במקום לנחש אם מודעה, קמפיין או כלי שיווקי באמת החזירו את ההשקעה - אתה מזין את הנתונים,
+            ו-GoldenFlow מציגה לך תמונה ברורה: כמה השקעת, כמה נכנס, מה הרווח הנקי ומה ה-ROI האמיתי.
+          </p>
+
+          <div className="mt-6 grid gap-3 text-right sm:grid-cols-2">
+            {roiPoints.map((point) => (
+              <div
+                key={point}
+                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4"
+              >
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#D4AF37]" />
+                <span className="text-sm font-semibold leading-7 text-white">{point}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/15 to-white/[0.03] p-4 text-center sm:p-6 lg:text-right">
+            <p className="text-base font-black leading-7 text-white min-[390px]:text-lg min-[390px]:leading-8">
+              לא עוד “נראה לי שזה עובד” - אלא מספרים ברורים שמראים מה באמת מחזיר כסף.
+            </p>
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.12] bg-[#050505] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.10)] sm:p-5">
+          <img
+            src="/brand/goldenflow-icon-dark.png"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-12 top-4 h-44 w-44 object-contain opacity-[0.06] sm:h-56 sm:w-56"
+          />
+          <div className="relative">
+            <div className="mb-4 flex items-center justify-between gap-3 border-b border-white/[0.08] pb-4">
+              <div className="text-right">
+                <p className="text-xs font-bold text-[#D4AF37]">בונוס למצטרפים</p>
+                <h3 className="mt-1 text-lg font-black text-white sm:text-xl">מרכז ROI חכם</h3>
+              </div>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10">
+                <Target className="h-5 w-5 text-[#D4AF37]" />
+              </span>
+            </div>
+
+            <div className="grid gap-3 min-[390px]:grid-cols-2">
+              {roiStats.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-3"
+                >
+                  <p className="text-xs leading-5 text-[#B8B8B8]">{item.label}</p>
+                  <strong
+                    className={`mt-2 block text-lg font-black sm:text-xl ${
+                      item.tone === "gold"
+                        ? "text-[#D4AF37]"
+                        : item.tone === "green"
+                          ? "text-emerald-300"
+                          : "text-white"
+                    }`}
+                  >
+                    {item.value}
+                  </strong>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-white/[0.10] bg-[#0B0B0B] p-4">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <h4 className="text-base font-black text-white">כלים והשקעות</h4>
+                <span className="rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1 text-xs font-bold text-emerald-300">
+                  רווחי
+                </span>
+              </div>
+              <div className="rounded-xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <p className="font-black text-white">מודעה ממומן</p>
+                  <span className="text-sm font-black text-[#D4AF37]">ROI: x20.0</span>
+                </div>
+                <div className="grid gap-2 text-sm text-[#B8B8B8] min-[390px]:grid-cols-2">
+                  <span>רווח נקי: ₪17,100</span>
+                  <span>הכנסה משוערת: ₪18,000</span>
+                  <span>עלות חודשית: ₪900</span>
+                  <span>תובנת AI: להמשיך לבדוק</span>
+                </div>
+              </div>
+              <div className="mt-4">
+                <div className="mb-2 flex items-center justify-between text-xs font-bold text-[#B8B8B8]">
+                  <span>עלות: ₪900</span>
+                  <span>הכנסה: ₪18,000</span>
+                </div>
+                <div className="h-3 overflow-hidden rounded-full bg-white/[0.10]">
+                  <div className="h-full w-[92%] rounded-full bg-[#D4AF37] shadow-[0_0_22px_rgba(212,175,55,0.35)]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-2">
+          <div className="rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/12 to-white/[0.03] p-5 text-center sm:p-6">
+            <p className="mx-auto max-w-4xl text-base font-black leading-8 text-white sm:text-xl sm:leading-9">
+              זה לא עוד CRM. זו מערכת שעוזרת לך גם לנהל לידים - וגם להבין איזה פעולות באמת מחזירות כסף.
+            </p>
+            <CtaButton className="mt-5 w-full sm:w-auto">אני רוצה לפתוח מנוי</CtaButton>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RealityPreviewSection() {
   return (
       <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
@@ -720,6 +859,8 @@ export default function GoldenFlowPage() {
           </div>
         </div>
       </section>
+
+      <RoiBonusSection />
 
       <RealityPreviewSection />
 
