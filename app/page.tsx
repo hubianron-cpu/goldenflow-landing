@@ -326,7 +326,7 @@ function DashboardPreview() {
             src="/brand/goldenflow-icon-gold.png"
             alt=""
             aria-hidden="true"
-            className="h-8 w-8 rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 p-1.5 sm:h-10 sm:w-10"
+            className="h-8 w-8 rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 p-1.5 object-contain sm:h-10 sm:w-10"
           />
           <div>
             <p className="text-xs text-[#B8B8B8]">GoldenFlow CRM</p>
@@ -538,20 +538,22 @@ export default function GoldenFlowPage() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#D4AF37]/35 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-12">
           <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-right">
-            <div className="mx-auto mb-4 inline-flex items-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)] sm:mb-5 lg:mx-0">
-              <img
-                src="/brand/goldenflow-icon-gold.png"
-                alt=""
-                aria-hidden="true"
-                className="h-6 w-6 sm:h-8 sm:w-8"
-              />
-              <span className="text-sm font-black tracking-wide text-white sm:text-base">
-                GoldenFlow CRM
-              </span>
-            </div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:mb-5 sm:px-4 sm:text-sm">
-              <Sparkles className="h-4 w-4" />
-              מחיר השקה למשתמשים הראשונים
+            <div className="mb-5 flex flex-col items-center gap-3 lg:items-start">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.10] bg-white/[0.04] px-3 py-2 shadow-[0_14px_44px_rgba(0,0,0,0.22)]">
+                <img
+                  src="/brand/goldenflow-icon-gold.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6 object-contain sm:h-8 sm:w-8"
+                />
+                <span className="text-sm font-black tracking-wide text-white sm:text-base">
+                  GoldenFlow CRM
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:px-4 sm:text-sm">
+                <Sparkles className="h-4 w-4" />
+                מחיר השקה למשתמשים הראשונים
+              </div>
             </div>
             <h1 className="text-[2.12rem] font-black leading-[1.1] text-white min-[390px]:text-[2.35rem] sm:text-5xl lg:text-6xl">
               הלידים שלך לא נעלמים.
@@ -748,10 +750,24 @@ export default function GoldenFlowPage() {
       <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionTitle eyebrow="מחיר השקה" title="מחיר השקה למשתמשים הראשונים" />
-          <div className="rounded-[24px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-4 text-right shadow-[0_34px_100px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.13)] min-[390px]:p-5 sm:rounded-[28px] sm:p-8">
-            <div className="flex flex-col gap-4 border-b border-white/[0.10] pb-6 text-center sm:flex-row sm:items-start sm:justify-between sm:pb-7 sm:text-right">
+          <div className="relative overflow-hidden rounded-[24px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-4 text-right shadow-[0_34px_100px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.13)] min-[390px]:p-5 sm:rounded-[28px] sm:p-8">
+            <img
+              src="/brand/goldenflow-icon-dark.png"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-14 top-3 h-44 w-44 object-contain opacity-[0.07] sm:-left-16 sm:top-6 sm:h-56 sm:w-56"
+            />
+            <div className="relative flex flex-col gap-4 border-b border-white/[0.10] pb-6 text-center sm:flex-row sm:items-start sm:justify-between sm:pb-7 sm:text-right">
               <div>
-                <p className="text-sm font-bold text-[#D4AF37]">GoldenFlow CRM</p>
+                <p className="flex items-center justify-center gap-2 text-sm font-bold text-[#D4AF37] sm:justify-start">
+                  <img
+                    src="/brand/goldenflow-icon-gold.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="h-5 w-5 object-contain"
+                  />
+                  GoldenFlow CRM
+                </p>
                 <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">חבילת השקה</h2>
               </div>
               <div className="text-center sm:text-left">
@@ -759,10 +775,10 @@ export default function GoldenFlowPage() {
                 <p className="mt-1 text-sm font-bold text-[#B8B8B8]">לחודש</p>
               </div>
             </div>
-            <p className="mt-5 rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3.5 text-center text-sm font-bold leading-7 text-white min-[390px]:p-4 min-[390px]:text-base min-[390px]:leading-8 sm:mt-6 sm:text-right">
+            <p className="relative mt-5 rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3.5 text-center text-sm font-bold leading-7 text-white min-[390px]:p-4 min-[390px]:text-base min-[390px]:leading-8 sm:mt-6 sm:text-right">
               המחיר נשאר קבוע למצטרפים בתקופת ההשקה כל עוד המנוי פעיל.
             </p>
-            <div className="mt-6 grid gap-3 sm:mt-7 sm:grid-cols-2">
+            <div className="relative mt-6 grid gap-3 sm:mt-7 sm:grid-cols-2">
               {includedItems.map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm font-bold text-white">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-[#D4AF37]" />
@@ -770,8 +786,8 @@ export default function GoldenFlowPage() {
                 </div>
               ))}
             </div>
-            <CtaButton className="mt-8 w-full">אני רוצה לפתוח מנוי</CtaButton>
-            <p className="mt-4 text-center text-sm leading-6 text-[#B8B8B8]">
+            <CtaButton className="relative mt-8 w-full">אני רוצה לפתוח מנוי</CtaButton>
+            <p className="relative mt-4 text-center text-sm leading-6 text-[#B8B8B8]">
               ללא התחייבות ארוכה. מתחילים פשוט ובודקים אם זה עושה לך סדר.
             </p>
           </div>
@@ -839,7 +855,14 @@ export default function GoldenFlowPage() {
       </section>
 
       <section className="px-4 pb-40 pt-12 min-[390px]:px-5 sm:px-6 sm:pt-20 lg:px-8 lg:pb-24">
-        <div className="mx-auto max-w-5xl rounded-[32px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-5 text-center shadow-[0_34px_100px_rgba(0,0,0,0.46),0_0_80px_rgba(212,175,55,0.14)] min-[390px]:p-7 sm:p-12">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-5 text-center shadow-[0_34px_100px_rgba(0,0,0,0.46),0_0_80px_rgba(212,175,55,0.14)] min-[390px]:p-7 sm:p-12">
+          <img
+            src="/brand/goldenflow-icon-dark.png"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-16 top-8 h-48 w-48 object-contain opacity-[0.06] sm:h-64 sm:w-64"
+          />
+          <div className="relative">
           <ShieldCheck className="mx-auto mb-5 h-10 w-10 text-[#D4AF37] sm:mb-6 sm:h-11 sm:w-11" />
           <h2 className="text-xl font-black leading-tight text-white min-[390px]:text-2xl sm:text-5xl">
             הליד הבא שלך לא אמור להיעלם בוואטסאפ
@@ -861,6 +884,7 @@ export default function GoldenFlowPage() {
             <p className="text-center text-sm leading-6 text-[#B8B8B8]">
               GoldenFlow CRM - מערכת פשוטה לניהול לידים, משימות ותהליך מכירה
             </p>
+          </div>
           </div>
         </div>
       </section>
