@@ -322,17 +322,16 @@ function DashboardPreview() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:34px_34px] opacity-20" />
       <div className="relative mb-3 flex items-center justify-between gap-3 border-b border-white/[0.08] pb-3 sm:mb-4 sm:gap-4 sm:pb-4">
         <div className="flex items-center gap-3">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 sm:h-10 sm:w-10">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.07] sm:h-10 sm:w-10">
             <img
               src="/brand/goldenflow-icon-gold.png"
               alt=""
               aria-hidden="true"
-              className="block h-5 w-5 object-contain sm:h-7 sm:w-7"
+              className="block h-5 w-5 object-contain sm:h-6 sm:w-6"
             />
           </span>
           <div>
-            <p className="text-xs text-[#B8B8B8]">GoldenFlow CRM</p>
-            <h3 className="mt-1 text-base font-black text-white min-[390px]:text-lg sm:text-xl">מה מקדמים היום?</h3>
+            <h3 className="text-base font-black text-white min-[390px]:text-lg sm:text-xl">מה מקדמים היום?</h3>
           </div>
         </div>
         <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs font-bold text-[#D4AF37]">
