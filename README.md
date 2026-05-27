@@ -21,4 +21,4 @@ Push this folder as its own GitHub repository, then import that repository into 
 
 No environment variables are required for this landing page.
 
-Before publishing, replace the WhatsApp placeholder `972XXXXXXXXX` in `app/page.tsx` with the real number.
+The WhatsApp CTA number is configured in `app/page.tsx` via the `whatsappUrl` constant.
