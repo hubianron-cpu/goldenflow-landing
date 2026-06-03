@@ -23,8 +23,7 @@ import {
   X,
 } from "lucide-react";
 
-const whatsappUrl =
-  "https://wa.me/972524780853?text=%D7%94%D7%99%D7%99%20%D7%A8%D7%95%D7%9F,%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A4%D7%AA%D7%95%D7%97%20%D7%9E%D7%A0%D7%95%D7%99%20%D7%9C-GoldenFlow%20CRM";
+const signupUrl = "https://app.goldenflowcrm.com/login";
 
 export const metadata: Metadata = {
   title: "GoldenFlow CRM | מערכת CRM פשוטה לבעלי עסקים",
@@ -199,12 +198,12 @@ const includedItems = [
 
 const steps = [
   {
-    title: "שולחים הודעה בוואטסאפ",
-    text: "כותבים שרוצים להצטרף ל-GoldenFlow CRM.",
+    title: "נרשמים ל-14 יום ללא עלות",
+    text: "לוחצים על הכפתור ומקבלים גישה למערכת.",
   },
   {
-    title: "פותחים לך משתמש",
-    text: "מקבלים גישה אישית למערכת.",
+    title: "נכנסים למערכת",
+    text: "פותחים משתמש ומתחילים לעבוד בסביבה האישית שלך.",
   },
   {
     title: "מכניסים את הלידים הראשונים",
@@ -268,7 +267,7 @@ function CtaButton({
 }) {
   return (
     <a
-      href={whatsappUrl}
+      href={signupUrl}
       target="_blank"
       rel="noreferrer"
       className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-5 py-2.5 text-sm font-black text-black shadow-[0_18px_50px_rgba(212,175,55,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#B8942E] hover:shadow-[0_22px_60px_rgba(212,175,55,0.34)] active:scale-[0.98] sm:min-h-12 sm:px-6 sm:py-3 ${className}`}
@@ -549,7 +548,7 @@ function RoiBonusSection() {
             <p className="mx-auto max-w-4xl text-base font-black leading-8 text-white sm:text-xl sm:leading-9">
               זה לא עוד CRM. זו מערכת שעוזרת לך גם לנהל לידים - וגם להבין איזה פעולות באמת מחזירות כסף.
             </p>
-            <CtaButton className="mt-5 w-full sm:w-auto">אני רוצה לפתוח מנוי</CtaButton>
+            <CtaButton className="mt-5 w-full sm:w-auto">לקבלת 14 יום ללא עלות</CtaButton>
           </div>
         </div>
       </div>
@@ -705,7 +704,7 @@ export default function GoldenFlowPage() {
               יום למי לפנות כדי להתקרב ליעד המכירות שלך.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center lg:justify-start">
-              <CtaButton className="w-full sm:w-auto">פתיחת מנוי בוואטסאפ</CtaButton>
+              <CtaButton className="w-full sm:w-auto">לקבלת 14 יום ללא עלות</CtaButton>
               <a
                 href="#fit"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:bg-white/[0.08] sm:min-h-12 sm:px-6 sm:py-3"
@@ -940,9 +939,9 @@ export default function GoldenFlowPage() {
                 </div>
               ))}
             </div>
-            <CtaButton className="relative mt-8 w-full">אני רוצה לפתוח מנוי</CtaButton>
+            <CtaButton className="relative mt-8 w-full">לקבלת 14 יום ללא עלות</CtaButton>
             <p className="relative mt-4 text-center text-sm leading-6 text-[#B8B8B8]">
-              ללא התחייבות ארוכה. מתחילים פשוט ובודקים אם זה עושה לך סדר.
+              מתחילים ב-14 יום ללא עלות, בלי צורך בוואטסאפ ובלי המתנה.
             </p>
           </div>
         </div>
@@ -1025,8 +1024,8 @@ export default function GoldenFlowPage() {
             GoldenFlow CRM עוזרת לפתוח כל יום עם סדר ברור: מי דורש טיפול, למי צריך
             לחזור, ומה הפעולה הבאה שיכולה לקרב אותך ליעד המכירות שלך.
           </p>
-          <CtaButton className="mt-7 w-full sm:mt-8 sm:w-auto sm:px-10">פתיחת מנוי בוואטסאפ</CtaButton>
-          <p className="mt-4 text-sm text-[#B8B8B8]">שלח הודעה עכשיו ונפתח לך גישה למערכת.</p>
+          <CtaButton className="mt-7 w-full sm:mt-8 sm:w-auto sm:px-10">לקבלת 14 יום ללא עלות</CtaButton>
+          <p className="mt-4 text-sm text-[#B8B8B8]">לחץ עכשיו וקבל גישה ל-14 יום ניסיון ללא עלות.</p>
           <div className="mx-auto mt-7 flex max-w-sm flex-col items-center gap-3 border-t border-white/[0.08] pt-6">
             <div className="relative h-20 w-40 overflow-hidden">
               <img
@@ -1044,7 +1043,7 @@ export default function GoldenFlowPage() {
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.10] bg-[#050505]/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] pt-2 backdrop-blur md:hidden">
-        <CtaButton className="w-full">פתיחת מנוי בוואטסאפ</CtaButton>
+        <CtaButton className="w-full">לקבלת 14 יום ללא עלות</CtaButton>
       </div>
     </main>
   );

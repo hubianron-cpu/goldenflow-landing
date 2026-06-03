@@ -21,4 +21,4 @@ Push this folder as its own GitHub repository, then import that repository into 
 
 No environment variables are required for this landing page.
 
-The WhatsApp CTA number is configured in `app/page.tsx` via the `whatsappUrl` constant.
+The primary signup CTA URL is configured in `app/page.tsx` via the `signupUrl` constant.
