@@ -13,7 +13,6 @@ import {
   Flag,
   Gauge,
   HandCoins,
-  MessageCircle,
   ShieldCheck,
   Sparkles,
   Target,
@@ -270,9 +269,9 @@ function CtaButton({
       href={signupUrl}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-5 py-2.5 text-sm font-black text-black shadow-[0_18px_50px_rgba(212,175,55,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#B8942E] hover:shadow-[0_22px_60px_rgba(212,175,55,0.34)] active:scale-[0.98] sm:min-h-12 sm:px-6 sm:py-3 ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#D4AF37] px-5 py-2.5 text-center text-[0.92rem] font-black leading-none text-black shadow-[0_18px_50px_rgba(212,175,55,0.26)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#B8942E] hover:shadow-[0_22px_60px_rgba(212,175,55,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] active:scale-[0.98] min-[360px]:whitespace-nowrap sm:min-h-12 sm:px-6 sm:py-3 sm:text-sm ${className}`}
     >
-      <MessageCircle className="h-5 w-5" />
+      <ArrowLeft className="h-5 w-5 shrink-0" />
       {children}
     </a>
   );
@@ -288,13 +287,13 @@ function SectionTitle({
   text?: string;
 }) {
   return (
-    <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-10 lg:text-right">
+    <div className="mx-auto mb-8 max-w-3xl text-center sm:mb-11 lg:text-right">
       {eyebrow ? (
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#D4AF37]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-[1.55rem] font-black leading-tight text-white min-[390px]:text-[1.7rem] sm:text-4xl">{title}</h2>
+      <h2 className="text-[1.55rem] font-black leading-tight text-white [text-wrap:balance] min-[390px]:text-[1.7rem] sm:text-4xl">{title}</h2>
       {text ? <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#B8B8B8] min-[390px]:leading-8 sm:text-lg lg:mx-0">{text}</p> : null}
     </div>
   );
@@ -302,7 +301,7 @@ function SectionTitle({
 
 function HighlightBlock({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/15 to-white/[0.03] p-4 text-center sm:p-6 lg:text-right">
+    <div className="rounded-[24px] border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/15 to-white/[0.03] p-4 text-center shadow-[0_18px_70px_rgba(212,175,55,0.08)] sm:rounded-3xl sm:p-6 lg:text-right">
       <p className="text-base font-black leading-7 text-white min-[390px]:text-lg min-[390px]:leading-8 sm:text-2xl sm:leading-9">{children}</p>
     </div>
   );
@@ -437,7 +436,8 @@ function RoiBonusSection() {
   ];
 
   return (
-    <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+    <section className="relative overflow-hidden bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#D4AF37]/20 to-transparent" />
       <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="text-center lg:text-right">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3.5 py-2 text-xs font-bold text-[#D4AF37] sm:text-sm">
@@ -456,7 +456,7 @@ function RoiBonusSection() {
             {roiPoints.map((point) => (
               <div
                 key={point}
-                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4"
+                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 shadow-[0_14px_44px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/25"
               >
                 <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#D4AF37]" />
                 <span className="text-sm font-semibold leading-7 text-white">{point}</span>
@@ -471,7 +471,7 @@ function RoiBonusSection() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.12] bg-[#050505] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.10)] sm:p-5">
+        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.12] bg-[#050505] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.42),0_0_78px_rgba(212,175,55,0.12)] sm:p-5">
           <img
             src="/brand/goldenflow-icon-dark.png"
             alt=""
@@ -493,7 +493,7 @@ function RoiBonusSection() {
               {roiStats.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-3"
+                  className="rounded-2xl border border-white/[0.10] bg-white/[0.04] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-200 hover:border-[#D4AF37]/25"
                 >
                   <p className="text-xs leading-5 text-[#B8B8B8]">{item.label}</p>
                   <strong
@@ -511,14 +511,14 @@ function RoiBonusSection() {
               ))}
             </div>
 
-            <div className="mt-4 rounded-2xl border border-white/[0.10] bg-[#0B0B0B] p-4">
+            <div className="mt-4 rounded-2xl border border-white/[0.10] bg-[#0B0B0B] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)]">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h4 className="text-base font-black text-white">כלים והשקעות</h4>
                 <span className="rounded-full border border-emerald-300/25 bg-emerald-300/10 px-3 py-1 text-xs font-bold text-emerald-300">
                   רווחי
                 </span>
               </div>
-              <div className="rounded-xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3">
+              <div className="rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/[0.06] p-3">
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <p className="font-black text-white">מודעה ממומן</p>
                   <span className="text-sm font-black text-[#D4AF37]">ROI: x20.0</span>
@@ -544,7 +544,7 @@ function RoiBonusSection() {
         </div>
 
         <div className="lg:col-span-2">
-          <div className="rounded-3xl border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/12 to-white/[0.03] p-5 text-center sm:p-6">
+          <div className="rounded-[24px] border border-[#D4AF37]/25 bg-gradient-to-l from-[#D4AF37]/12 to-white/[0.03] p-5 text-center shadow-[0_20px_70px_rgba(212,175,55,0.08)] sm:rounded-3xl sm:p-6">
             <p className="mx-auto max-w-4xl text-base font-black leading-8 text-white sm:text-xl sm:leading-9">
               זה לא עוד CRM. זו מערכת שעוזרת לך גם לנהל לידים - וגם להבין איזה פעולות באמת מחזירות כסף.
             </p>
@@ -707,7 +707,7 @@ export default function GoldenFlowPage() {
               <CtaButton className="w-full sm:w-auto">לקבלת 14 יום ללא עלות</CtaButton>
               <a
                 href="#fit"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:bg-white/[0.08] sm:min-h-12 sm:px-6 sm:py-3"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-white/[0.04] px-5 py-2.5 text-sm font-bold text-white transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] sm:min-h-12 sm:px-6 sm:py-3"
               >
                 למי זה מתאים?
                 <ArrowLeft className="h-4 w-4" />
@@ -728,7 +728,7 @@ export default function GoldenFlowPage() {
               (item) => (
                 <div
                   key={item}
-                  className="flex items-center justify-center gap-2 rounded-2xl border border-white/[0.10] bg-white/[0.035] px-4 py-4 text-center text-sm font-bold text-white"
+                  className="flex items-center justify-center gap-2 rounded-2xl border border-white/[0.10] bg-white/[0.035] px-4 py-4 text-center text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] transition duration-200 hover:border-[#D4AF37]/25"
                 >
                   <CheckCircle2 className="h-5 w-5 text-[#D4AF37]" />
                   {item}
@@ -749,7 +749,7 @@ export default function GoldenFlowPage() {
             {audienceCards.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-white/[0.12] bg-[#0B0B0B] p-4 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-5"
+                className="rounded-2xl border border-white/[0.12] bg-[#0B0B0B] p-4 text-right shadow-[0_18px_60px_rgba(0,0,0,0.22)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/30 sm:p-5"
               >
                 <BadgeCheck className="mb-4 h-6 w-6 text-[#D4AF37]" />
                 <h3 className="text-base font-black leading-7 text-white">{item.title}</h3>
@@ -771,7 +771,7 @@ export default function GoldenFlowPage() {
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {painCards.map((item) => (
-              <div key={item} className="rounded-2xl border border-white/[0.10] bg-[#050505] p-4 sm:p-5">
+              <div key={item} className="rounded-2xl border border-white/[0.10] bg-[#050505] p-4 shadow-[0_14px_44px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/25 sm:p-5">
                 <BellRing className="mb-4 h-6 w-6 text-[#D4AF37]" />
                 <p className="text-base font-semibold leading-7 text-[#F5F5F5]">{item}</p>
               </div>
@@ -808,7 +808,7 @@ export default function GoldenFlowPage() {
             {solutionItems.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right"
+                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right shadow-[0_14px_44px_rgba(0,0,0,0.16)] transition duration-200 hover:border-[#D4AF37]/25"
               >
                 <Check className="mt-1 h-5 w-5 shrink-0 text-[#D4AF37]" />
                 <span className="text-sm font-semibold leading-7 text-white">{item}</span>
@@ -845,7 +845,7 @@ export default function GoldenFlowPage() {
               return (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-white/[0.12] bg-[#0B0B0B] p-4 text-right transition duration-200 hover:-translate-y-1 hover:border-[#D4AF37]/35 sm:p-5"
+                  className="rounded-2xl border border-white/[0.12] bg-[#0B0B0B] p-4 text-right shadow-[0_16px_54px_rgba(0,0,0,0.18)] transition duration-200 hover:-translate-y-1 hover:border-[#D4AF37]/35 sm:p-5"
                 >
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 text-[#D4AF37]">
                     <Icon className="h-5 w-5" />
@@ -883,7 +883,7 @@ export default function GoldenFlowPage() {
             {clarityItems.map((item) => (
               <div
                 key={item.text}
-                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
+                className="flex items-start gap-3 rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right shadow-[0_14px_44px_rgba(0,0,0,0.16)] transition duration-200 hover:border-[#D4AF37]/25 sm:p-5"
               >
                 {item.type === "yes" ? (
                   <Check className="mt-1 h-5 w-5 shrink-0 text-[#D4AF37]" />
@@ -903,7 +903,7 @@ export default function GoldenFlowPage() {
       <section className="px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <SectionTitle eyebrow="מחיר השקה" title="מחיר השקה למשתמשים הראשונים" />
-          <div className="relative overflow-hidden rounded-[24px] border border-[#D4AF37]/30 bg-[#0B0B0B] p-4 text-right shadow-[0_34px_100px_rgba(0,0,0,0.42),0_0_70px_rgba(212,175,55,0.13)] min-[390px]:p-5 sm:rounded-[28px] sm:p-8">
+          <div className="relative overflow-hidden rounded-[24px] border border-[#D4AF37]/35 bg-[#0B0B0B] p-4 text-right shadow-[0_34px_100px_rgba(0,0,0,0.46),0_0_82px_rgba(212,175,55,0.16)] min-[390px]:p-5 sm:rounded-[28px] sm:p-8">
             <img
               src="/brand/goldenflow-icon-dark.png"
               alt=""
@@ -924,7 +924,7 @@ export default function GoldenFlowPage() {
                 <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">חבילת השקה</h2>
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-4xl font-black leading-none text-[#D4AF37] min-[390px]:text-5xl sm:text-6xl">97 ש&quot;ח</p>
+                <p className="text-4xl font-black leading-none text-[#D4AF37] drop-shadow-[0_0_22px_rgba(212,175,55,0.20)] min-[390px]:text-5xl sm:text-6xl">97 ש&quot;ח</p>
                 <p className="mt-1 text-sm font-bold text-[#B8B8B8]">לחודש</p>
               </div>
             </div>
@@ -933,7 +933,7 @@ export default function GoldenFlowPage() {
             </p>
             <div className="relative mt-6 grid gap-3 sm:mt-7 sm:grid-cols-2">
               {includedItems.map((item) => (
-                <div key={item} className="flex items-center gap-3 text-sm font-bold text-white">
+                <div key={item} className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.025] px-3 py-2.5 text-sm font-bold text-white">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-[#D4AF37]" />
                   {item}
                 </div>
@@ -954,7 +954,7 @@ export default function GoldenFlowPage() {
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
+                className="rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right shadow-[0_14px_44px_rgba(0,0,0,0.16)] transition duration-200 hover:-translate-y-0.5 hover:border-[#D4AF37]/25 sm:p-5"
               >
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#D4AF37] text-lg font-black text-black">
                   {index + 1}
@@ -987,20 +987,20 @@ export default function GoldenFlowPage() {
       <section className="bg-[#0B0B0B] px-4 py-12 min-[390px]:px-5 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <SectionTitle title="שאלות נפוצות" />
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <details
                 key={faq.question}
                 open={index === 0}
-                className="group rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right sm:p-5"
+                className="group rounded-2xl border border-white/[0.10] bg-[#050505] p-4 text-right shadow-[0_14px_44px_rgba(0,0,0,0.14)] transition duration-200 hover:border-[#D4AF37]/25 sm:p-5"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[0.95rem] font-black leading-7 text-white min-[390px]:text-base sm:gap-4 sm:text-lg [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-xl text-[0.95rem] font-black leading-7 text-white outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] min-[390px]:text-base sm:gap-4 sm:text-lg [&::-webkit-details-marker]:hidden">
                   <span className="min-w-0 pe-3">{faq.question}</span>
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/[0.12] text-[#D4AF37] transition group-open:rotate-45 sm:h-8 sm:w-8">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 text-sm leading-7 text-[#B8B8B8] min-[390px]:text-base min-[390px]:leading-8">{faq.answer}</p>
+                <p className="mt-4 border-t border-white/[0.06] pt-4 text-sm leading-7 text-[#B8B8B8] min-[390px]:text-base min-[390px]:leading-8">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -1042,7 +1042,7 @@ export default function GoldenFlowPage() {
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.10] bg-[#050505]/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] pt-2 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/[0.10] bg-[#050505]/92 px-3 pb-[calc(env(safe-area-inset-bottom)+0.55rem)] pt-2.5 shadow-[0_-18px_50px_rgba(0,0,0,0.42)] backdrop-blur md:hidden">
         <CtaButton className="w-full">לקבלת 14 יום ללא עלות</CtaButton>
       </div>
     </main>
