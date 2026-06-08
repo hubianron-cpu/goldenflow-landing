@@ -924,7 +924,7 @@ export default function GoldenFlowPage() {
                 <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">חבילת השקה</h2>
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-4xl font-black leading-none text-[#D4AF37] drop-shadow-[0_0_22px_rgba(212,175,55,0.20)] min-[390px]:text-5xl sm:text-6xl">97 ש&quot;ח</p>
+                <p className="text-4xl font-black leading-none text-[#D4AF37] drop-shadow-[0_0_22px_rgba(212,175,55,0.20)] min-[390px]:text-5xl sm:text-6xl">99 ש&quot;ח</p>
                 <p className="mt-1 text-sm font-bold text-[#B8B8B8]">לחודש</p>
               </div>
             </div>
